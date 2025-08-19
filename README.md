@@ -53,6 +53,32 @@ connection.commit()
 connection.close()
 ```
 
+## Insering Data into Database
+
+```python3
+connection.execute("INSERT INTO customers VALUES ('Jotta', 'Vanish', 30, 'jottavanish@email.com')")
+```
+## Inserting More Than One Data at a Time
+
+```python3
+customers = [
+  ('Mary', 'Kuewa', 69, mary@email.com),
+  ('Steeve', 'Pas', 47, steeve@email.com),
+  ('Dan', 'Brown', 50, dan@email.com),
+]
+
+connection.executemany("INSERT INTO customers VALUES (?,?,?)", customers)
+```
+
+## Seeing What's Inside the Database
+
+```python3
+connection.execute("SELECT * FROM customers")
+# print(connection.fetchone())
+# print(connection.fetchmany(2))
+print(connection.fetchall())
+```
+
 ```python3
 
 ```
